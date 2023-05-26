@@ -14,9 +14,9 @@ Você deve desenvolver um mini e-commerce utilizando NextJS e um banco de dados 
 
 2. Tela de listagem de produtos:
 
--Exibir todos os produtos cadastrados, incluindo nome, descrição, preço e imagem.
--Permitir que o usuário filtre os produtos por categoria ou utilize uma pesquisa por nome.
--Exibir os produtos de forma paginada, com um número fixo de produtos por página.
+- Exibir todos os produtos cadastrados, incluindo nome, descrição, preço e imagem.
+- Permitir que o usuário filtre os produtos por categoria ou utilize uma pesquisa por nome.
+- Exibir os produtos de forma paginada, com um número fixo de produtos por página.
 
 3. Funcionalidade de carrinho de compras:
 
