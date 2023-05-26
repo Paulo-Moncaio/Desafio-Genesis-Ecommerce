@@ -1,45 +1,35 @@
 # Desafio-Genesis-Ecommerce
-A Genesis Bank está em busca de um novo desenvolvedor Pleno com conhecimentos em React Native e NextJS. Se você está vendo essa página,é porque foi um dos selecionados para a nossa próxima fase, que é a realização de um teste. O objetivo do nosso teste é conhecer seu nível de conhecimento nas ferramentas utilizadas em nosso dia a dia.
 
-Descrição:
+## Descrição:
 
 Você deve desenvolver um mini e-commerce utilizando NextJS e um banco de dados para armazenar os produtos. O aplicativo deve ter as seguintes funcionalidades:
 
-Tela de cadastro de produtos:
+1. Tela de cadastro de produtos:
 
-Permitir que o usuário adicione novos produtos, fornecendo informações como nome, descrição, preço e imagem.
+- Permitir que o usuário adicione novos produtos, fornecendo informações como nome, descrição, preço e imagem.
 
-Validar os campos obrigatórios e exibir mensagens de erro caso algum campo não esteja preenchido corretamente.
+- Validar os campos obrigatórios e exibir mensagens de erro caso algum campo não esteja preenchido corretamente.
 
-Salvar os produtos no banco de dados.
+- Salvar os produtos no banco de dados.
 
-Tela de listagem de produtos:
+2. Tela de listagem de produtos:
 
-Exibir todos os produtos cadastrados, incluindo nome, descrição, preço e imagem.
+- Exibir todos os produtos cadastrados, incluindo nome, descrição, preço e imagem.
+- Permitir que o usuário filtre os produtos por categoria ou utilize uma pesquisa por nome.
+- Exibir os produtos de forma paginada, com um número fixo de produtos por página.
 
-Permitir que o usuário filtre os produtos por categoria ou utilize uma pesquisa por nome.
+3. Funcionalidade de carrinho de compras:
 
-Exibir os produtos de forma paginada, com um número fixo de produtos por página.
-
-Funcionalidade de carrinho de compras:
-
-Permitir que o usuário adicione produtos ao carrinho.
-
-Exibir o conteúdo atual do carrinho, incluindo nome, preço, quantidade e subtotal de cada produto.
-
-Permitir que o usuário atualize a quantidade de produtos no carrinho e remova produtos.
-
-Calcular e exibir o total do carrinho.
+- ermitir que o usuário adicione produtos ao carrinho.
+- xibir o conteúdo atual do carrinho, incluindo nome, preço, quantidade e subtotal de cada produto.
+- ermitir que o usuário atualize a quantidade de produtos no carrinho e remova produtos.
+- alcular e exibir o total do carrinho.
 
 Requisitos técnicos:
-
-Utilizar NextJS para criar as páginas e componentes do aplicativo.
-
-Utilizar algum banco de dados, como MySQL, PostgreSQL ou MongoDB, para armazenar os produtos.
-
-Implementar as funcionalidades de cadastro, listagem e carrinho de compras utilizando a linguagem de banco de dados
-
-Utilizar CSS ou uma biblioteca de estilização, como styled-components ou Chakra UI, para estilizar o aplicativo.
+- tilizar NextJS para criar as páginas e componentes do aplicativo.
+- tilizar algum banco de dados, como MySQL, PostgreSQL ou MongoDB, para armazenar os produtos.
+- mplementar as funcionalidades de cadastro, listagem e carrinho de compras utilizando a linguagem de banco de dados
+- Utilizar CSS ou uma biblioteca de estilização, como styled-components ou Chakra UI, para estilizar o aplicativo.
 
 Observações:
 
