@@ -1,4 +1,4 @@
-"use-client";
+"use client";
 import {
   Button,
   ButtonGroup,
@@ -11,7 +11,6 @@ import {
   Text,
   Image,
 } from "@chakra-ui/react";
-
 export interface IProductCard {
   id: string;
   imageSrc: string;
@@ -22,7 +21,7 @@ export interface IProductCard {
 
 export default function ProductCard() {
   return (
-    <Card maxW="sm">
+    <Card maxW="2xs">
       <CardBody>
         <Image
           src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
@@ -33,10 +32,9 @@ export default function ProductCard() {
           <Heading size="md">Living room Sofa</Heading>
           <Text>
             This sofa is perfect for modern tropical spaces, baroque inspired
-            spaces, earthy toned spaces and for people who love a chic design
-            with a sprinkle of vintage design.
+            spaces.
           </Text>
-          <Text color="blue.600" fontSize="2xl">
+          <Text color="orange.600" fontSize="2xl">
             $450
           </Text>
         </Stack>
@@ -44,10 +42,10 @@ export default function ProductCard() {
       <Divider />
       <CardFooter>
         <ButtonGroup spacing="2">
-          <Button variant="solid" colorScheme="blue">
+          <Button variant="solid" colorScheme="orange">
             Buy now
           </Button>
-          <Button variant="ghost" colorScheme="blue">
+          <Button variant="ghost" colorScheme="orange">
             Add to cart
           </Button>
         </ButtonGroup>

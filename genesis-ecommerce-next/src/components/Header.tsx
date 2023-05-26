@@ -1,4 +1,4 @@
-"use-client";
+"use client";
 import {
   Box,
   Flex,
@@ -10,12 +10,13 @@ import {
   MenuItem,
   Icon,
   Image,
+  textDecoration,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 export default function Header() {
   return (
-    <Box bg="gray.200" p={4}>
+    <Box bg="#121214" p={4}>
       <Flex justifyContent="space-between" alignItems="center">
         <Flex justify={"center"} align={"center"}>
           <Image
@@ -24,15 +25,21 @@ export default function Header() {
             src="https://static.wixstatic.com/media/2ca6cd_b4b8bf8e6c22412ca73586bc7f9360af~mv2.png/v1/fill/w_328,h_328,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/2ca6cd_b4b8bf8e6c22412ca73586bc7f9360af~mv2.png"
           />
           <NextLink href="/">
-            <Link display={"flex"} flexDirection={"row"}>
-              <Heading as="h1" size="lg">
+            <Link
+              display={"flex"}
+              flexDirection={"row"}
+              _hover={{
+                textDecoration: "none",
+              }}
+            >
+              <Heading as="h1" size="lg" color="#ee4214">
                 Genesis Shop
               </Heading>
             </Link>
           </NextLink>
         </Flex>
         <Menu>
-          <MenuButton as={Link}>Menu</MenuButton>
+          <MenuButton color={"white"}>Menu</MenuButton>
           <MenuList>
             <MenuItem>
               <NextLink href="/about">

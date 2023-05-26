@@ -2,6 +2,7 @@
 import { Roboto } from "next/font/google";
 import { Providers } from "./providers";
 import Header from "@/components/Header";
+import { Box } from "@chakra-ui/react";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -21,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body style={{ backgroundColor: "#2b2828" }} className={roboto.className}>
         <Providers>
           <Header />
           {children}
