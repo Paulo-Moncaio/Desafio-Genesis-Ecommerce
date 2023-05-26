@@ -31,9 +31,11 @@ export default function Cadastro() {
     handleSubmit,
     register,
     formState: { errors },
+    getValues,
   } = useForm<ProductFormInputs>({
     resolver: zodResolver(schema),
   });
+  console.log(getValues("image"));
 
   const onSubmit = (data: ProductFormInputs) => {
     console.log(data);
@@ -81,6 +83,18 @@ export default function Cadastro() {
               <Input type="text" {...register("image")} />
               <FormErrorMessage>{errors.image?.message}</FormErrorMessage>
             </FormControl>
+
+            {getValues("image") && (
+              <Image
+                justifySelf={"center"}
+                src={getValues("image")}
+                alt="Imagem do produto"
+                mt={4}
+                mx={"auto"}
+                maxH={200}
+                objectFit="cover"
+              />
+            )}
 
             <Button type="submit" mt={4} colorScheme="orange">
               Cadastrar
