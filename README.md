@@ -6,7 +6,8 @@
 2. rodar docker-compose up -d
 3. cd genesis-ecommerce-next
 4. npm install
-5. npm run dev
+5. npm run codegen
+6. npm run dev
 
 ## Descrição:
 
