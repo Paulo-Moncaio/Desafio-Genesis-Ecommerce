@@ -1,0 +1,39 @@
+query GetProductsFilter(
+  $offset: Int = 0
+  $category_filter: String = "."
+  $name_filter: String = "."
+) {
+  products(
+    limit: 10
+    offset: $offset
+    where: {
+      _or: {
+        _and: [
+          { category: { _iregex: $category_filter } }
+          { name: { _iregex: $name_filter } }
+        ]
+      }
+    }
+  ) {
+    id
+    name
+    price
+    category
+    description
+    image
+  }
+  products_aggregate(
+    where: {
+      _or: {
+        _and: [
+          { category: { _iregex: $category_filter } }
+          { name: { _iregex: $name_filter } }
+        ]
+      }
+    }
+  ) {
+    aggregate {
+      count
+    }
+  }
+}

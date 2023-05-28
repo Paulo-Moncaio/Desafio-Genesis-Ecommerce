@@ -1,0 +1,26 @@
+mutation CreateProduct(
+  $category: String = ""
+  $description: String = ""
+  $image: String = ""
+  $name: String = ""
+  $price: numeric = ""
+) {
+  insert_products(
+    objects: {
+      category: $category
+      description: $description
+      image: $image
+      name: $name
+      price: $price
+    }
+  ) {
+    returning {
+      category
+      description
+      id
+      image
+      name
+      price
+    }
+  }
+}
