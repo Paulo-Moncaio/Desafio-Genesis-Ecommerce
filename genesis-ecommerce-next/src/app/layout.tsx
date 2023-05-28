@@ -2,7 +2,6 @@
 import { Roboto } from "next/font/google";
 import { Providers } from "./providers";
 import Header from "@/components/Header";
-import { Box } from "@chakra-ui/react";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
