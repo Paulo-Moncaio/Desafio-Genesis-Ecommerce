@@ -4,10 +4,16 @@
 
 1. clone o repositorio
 2. rodar docker-compose up -d
-3. cd genesis-ecommerce-next
-4. npm install
-5. npm run codegen
-6. npm run dev
+3. entrar no hasura na [porta 8080](http://localhost:8080/console/data)
+4. clique em connect to database, selecione postgres e clique em "Connect Existing Database"
+5. selecione "Environment variable" em Connect Database via e cole o seguinte texto "PG_DATABASE_URL" e finalmente clique em Connect Database
+6. agora no lado esquedo selecione a seção SQL e copie o codigo do arquivo genesis_ecommerce.sql na raiz do repositorio e cole na area de texto entao rode o comando, para criar as tabelas e popular o banco
+7. agora na raiz do repositorio rode os seguintes comandos:
+8. cd genesis-ecommerce-next
+9. npm install
+10. npm run codegen
+11. npm run dev
+12. agora teste a aplicação na [porta 3000](http://localhost:3000)
 
 ## Descrição:
 
