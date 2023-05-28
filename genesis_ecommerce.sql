@@ -1,15 +1,15 @@
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
-  name TEXT,
-  price NUMERIC(10, 2),
-  category TEXT,
-  description TEXT,
-  image TEXT
+  name TEXT NOT NULL,
+  price NUMERIC(10, 2) NOT NULL,
+  category TEXT NOT NULL,
+  description TEXT NOT NULL,
+  image TEXT NOT NULL
 );
 
 CREATE TABLE categories (
   id SERIAL PRIMARY KEY,
-  category TEXT
+  category TEXT NOT NULL
 );
 
 
