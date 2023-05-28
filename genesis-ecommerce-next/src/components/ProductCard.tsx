@@ -1,7 +1,7 @@
 "use client";
+import { CartContext } from "@/app/context/cartContext";
 import {
   Button,
-  ButtonGroup,
   Card,
   CardBody,
   CardFooter,
@@ -10,45 +10,82 @@ import {
   Stack,
   Text,
   Image,
+  Flex,
+  HStack,
 } from "@chakra-ui/react";
+import { useContext, useState } from "react";
 export interface IProductCard {
-  id: string;
-  imageSrc: string;
+  id: number;
+  imageUrl: string | null | undefined;
   title: string;
+  description: string | null | undefined;
   price: number;
-  categorie: string;
+  category: string;
 }
 
-export default function ProductCard() {
+export default function ProductCard({
+  id,
+  imageUrl,
+  title,
+  description,
+  price,
+  category,
+}: IProductCard) {
+  const [filterCategory, setFilterCategory] = useState<string>(".");
+  const [filterTitle, setFilterTitle] = useState<string>(".");
+  const { cartItems, addToCart, removeFromCart, clearCart } =
+    useContext(CartContext);
+
+  const cartItem = cartItems.find((item) => item.id === id);
+
   return (
-    <Card maxW="2xs">
+    <Card height="500px" maxW="2xs">
       <CardBody>
-        <Image
-          src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-          alt="Green double couch with wooden legs"
-          borderRadius="lg"
-        />
+        {imageUrl ? (
+          <Image
+            src={imageUrl}
+            onError={(e) => {
+              e.currentTarget.src =
+                "https://mahadevfastfoodvns.websites.co.in/twenty-seventeen/img/product-placeholder.png";
+            }}
+            alt={title}
+            borderRadius="lg"
+            height={200}
+            objectFit="cover"
+          />
+        ) : (
+          <Text color={"red"}>Imagem inválida</Text>
+        )}
+
         <Stack mt="6" spacing="3">
-          <Heading size="md">Living room Sofa</Heading>
-          <Text>
-            This sofa is perfect for modern tropical spaces, baroque inspired
-            spaces.
-          </Text>
+          <Heading noOfLines={2} size="md">
+            {title}
+          </Heading>
+          <Text noOfLines={2}>{description}</Text>
           <Text color="orange.600" fontSize="2xl">
-            $450
+            ${price}
           </Text>
         </Stack>
       </CardBody>
       <Divider />
       <CardFooter>
-        <ButtonGroup spacing="2">
-          <Button variant="solid" colorScheme="orange">
-            Buy now
-          </Button>
-          <Button variant="ghost" colorScheme="orange">
+        <Flex w="100%" direction={"row"} align={"center"}>
+          <Button
+            variant="ghost"
+            colorScheme="orange"
+            onClick={() => addToCart({ id, name: title, imageUrl, price })}
+          >
             Add to cart
           </Button>
-        </ButtonGroup>
+          {cartItem && cartItem.quantity && cartItem.quantity >= 1 && (
+            <HStack>
+              <Text fontSize={"sm"}>Quantidade: </Text>
+              <Text fontWeight={"semibold"} fontSize={"lg"}>
+                {cartItem?.quantity}
+              </Text>
+            </HStack>
+          )}
+        </Flex>
       </CardFooter>
     </Card>
   );
