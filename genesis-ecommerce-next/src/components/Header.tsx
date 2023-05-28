@@ -1,4 +1,5 @@
 "use client";
+import { CartContext } from "@/app/context/cartContext";
 import {
   Box,
   Flex,
@@ -8,13 +9,32 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Icon,
+  IconButton,
   Image,
-  textDecoration,
+  Badge,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
+import { useContext, useEffect, useState } from "react";
+import { HiOutlineShoppingCart } from "react-icons/hi";
 
 export default function Header() {
+  const [itemCount, setItemCount] = useState(0);
+  const { cartItems } = useContext(CartContext);
+
+  useEffect(() => {
+    let totalCount = 0;
+
+    cartItems.forEach((element) => {
+      if (element.quantity > 1) {
+        totalCount += element.quantity;
+      } else {
+        totalCount += 1;
+      }
+    });
+
+    setItemCount(totalCount);
+  }, [cartItems]);
+
   return (
     <Box bg="#121214" p={4}>
       <Flex justifyContent="space-between" alignItems="center">
@@ -38,22 +58,56 @@ export default function Header() {
             </Link>
           </NextLink>
         </Flex>
-        <Menu>
-          <MenuButton color={"white"}>Menu</MenuButton>
-          <MenuList>
-            <MenuItem>
-              <NextLink href="/about">
-                <Link>About</Link>
-              </NextLink>
-            </MenuItem>
-            <MenuItem>
-              <NextLink href="/products">
-                <Link>Products</Link>
-              </NextLink>
-            </MenuItem>
-            {/* Adicione mais itens de menu conforme necessário */}
-          </MenuList>
-        </Menu>
+        <Flex>
+          <NextLink href="/carrinho">
+            <Link position={"relative"}>
+              <IconButton
+                aria-label="Carrinho de Compras"
+                icon={<HiOutlineShoppingCart />}
+                variant="ghost"
+                color={"white"}
+                colorScheme="white"
+                boxSize={14}
+                fontSize={32}
+              />
+              {itemCount > 0 && (
+                <Badge
+                  borderRadius="full"
+                  variant={"subtle"}
+                  colorScheme="white"
+                  color={"white"}
+                  position="absolute"
+                  top="-28px"
+                  right="-4px"
+                  fontSize={24}
+                >
+                  {itemCount}
+                </Badge>
+              )}
+              {/* <IconButton
+                variant="unstyled"
+                aria-label="exclude product"
+                fontSize="20px"
+                size={"sm"}
+                borderRadius={"full"}
+                colorScheme="white"
+                color={"white"}
+                icon={<HiOutlineShoppingCart />}
+              /> */}
+            </Link>
+          </NextLink>
+
+          <Menu>
+            <MenuButton color={"white"}>Menu</MenuButton>
+            <MenuList>
+              <MenuItem>
+                <NextLink href="/cadastro">
+                  <Link>Cadastrar produto</Link>
+                </NextLink>
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </Flex>
       </Flex>
     </Box>
   );
