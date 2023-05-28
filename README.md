@@ -1,5 +1,13 @@
 # Desafio-Genesis-Ecommerce
 
+## Como rodar o projeto
+
+1. clone o repositorio
+2. rodar docker-compose up -d
+3. cd genesis-ecommerce-next
+4. npm install
+5. npm run dev
+
 ## Descrição:
 
 Você deve desenvolver um mini e-commerce utilizando NextJS e um banco de dados para armazenar os produtos. O aplicativo deve ter as seguintes funcionalidades:
