@@ -15,9 +15,7 @@ Você deve desenvolver um mini e-commerce utilizando NextJS e um banco de dados 
 1. Tela de cadastro de produtos:
 
 - Permitir que o usuário adicione novos produtos, fornecendo informações como nome, descrição, preço e imagem.
-
 - Validar os campos obrigatórios e exibir mensagens de erro caso algum campo não esteja preenchido corretamente.
-
 - Salvar os produtos no banco de dados.
 
 2. Tela de listagem de produtos:
