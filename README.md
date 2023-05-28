@@ -28,10 +28,10 @@ Você deve desenvolver um mini e-commerce utilizando NextJS e um banco de dados 
 
 3. Funcionalidade de carrinho de compras:
 
-- ermitir que o usuário adicione produtos ao carrinho.
-- xibir o conteúdo atual do carrinho, incluindo nome, preço, quantidade e subtotal de cada produto.
-- ermitir que o usuário atualize a quantidade de produtos no carrinho e remova produtos.
-- alcular e exibir o total do carrinho.
+- Permitir que o usuário adicione produtos ao carrinho.
+- Exibir o conteúdo atual do carrinho, incluindo nome, preço, quantidade e subtotal de cada produto.
+- Permitir que o usuário atualize a quantidade de produtos no carrinho e remova produtos.
+- Calcular e exibir o total do carrinho.
 
 Requisitos técnicos:
 - tilizar NextJS para criar as páginas e componentes do aplicativo.
