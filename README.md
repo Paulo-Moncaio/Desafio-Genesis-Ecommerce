@@ -1,6 +1,6 @@
 # Desafio-Genesis-Ecommerce
 
-## Como rodar o projeto
+## ▶ Como rodar o projeto
 
 1. clone o repositorio
 2. rodar docker-compose up -d
