@@ -1,5 +1,19 @@
 # Desafio-Genesis-Ecommerce
 
+## ✨ Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- React.js
+- [Typescript](https://www.typescriptlang.org/)
+- Next.js
+- Hasura
+- Graphql
+- Chakra UI
+- React Query
+- React Hook Forms
+- zod
+
 ## ▶ Como rodar o projeto
 
 1. clone o repositorio
