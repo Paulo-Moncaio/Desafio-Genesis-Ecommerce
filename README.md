@@ -1,4 +1,4 @@
-# Desafio-Genesis-Ecommerce
+#Mini-Ecommerce
 
 ## ✨ Tecnologias
 
